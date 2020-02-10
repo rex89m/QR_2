@@ -14,6 +14,8 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.zxing.Result;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -180,6 +182,16 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     public void click_lista(View view) {
         Intent intent = new Intent(this, Activity_lista.class);
         startActivity(intent);
+    }
+    public void tst() {
+        FloatingActionButton fab = findViewById(R.id.setting);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
     }
 
 }
