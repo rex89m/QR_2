@@ -210,10 +210,4 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
         liczba_text.setText(String.valueOf(suma));
     }
-
-    public void click_lista(View view) {
-        Intent intent = new Intent(this, Activity_lista.class);
-
-
-    }
 }
