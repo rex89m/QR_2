@@ -8,23 +8,24 @@
     tools:context=".MainActivity">
 
 
-
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|right"
+        android:layout_marginStart="@dimen/fab_margin"
+        android:layout_marginTop="@dimen/fab_margin"
+        android:layout_marginEnd="@dimen/fab_margin"
+        android:layout_marginBottom="@dimen/fab_margin"
+        app:srcCompat="@android:drawable/ic_menu_preferences"
+        android:onClick="setting"/>
 
         <me.dm7.barcodescanner.zxing.ZXingScannerView
         android:id="@+id/screen"
         android:layout_width="match_parent"
         android:layout_height="300dp" >
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/setting"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="top|right"
-                android:layout_marginStart="@dimen/fab_margin"
-                android:layout_marginTop="@dimen/fab_margin"
-                android:layout_marginEnd="@dimen/fab_margin"
-                android:layout_marginBottom="@dimen/fab_margin"
-                app:srcCompat="@android:drawable/ic_menu_preferences" />
+
         </me.dm7.barcodescanner.zxing.ZXingScannerView>
 
 

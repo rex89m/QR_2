@@ -120,6 +120,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                 .setMessage("")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
+                        LinearLayout scrollView = findViewById(R.id.but);
                         SharedPreferences.Editor edit = fille.edit();
                         SharedPreferences.Editor edit_2 = fille_2.edit();
                         SharedPreferences.Editor edit_3 = fille_3.edit();
@@ -134,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                         edit_4.apply();
                         TextView liczba_text = findViewById(R.id.ilosc_osob);
                         liczba_text.setText(String.valueOf(0));
+                        scrollView.removeAllViews();
                     }
                 })
                 .setNegativeButton(android.R.string.no, null)
@@ -180,5 +182,9 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     public void click_lista(View view) {
         Intent intent = new Intent(this, Activity_lista.class);
         startActivity(intent);
+    }
+
+
+    public void setting(View view) {
     }
 }
