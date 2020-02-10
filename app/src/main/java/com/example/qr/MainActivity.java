@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -54,6 +55,15 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         setContentView(R.layout.activity_main);
         scannerView = findViewById(R.id.screen);
         podlicz();
+        TextView textView = findViewById(R.id.wolne_miejsca);
+        int liczba_2 = Integer.parseInt((fille_5.getString("settings", "")));
+
+        int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
+
+        Log.d("___", String.valueOf(liczba_2-suma));
+
+        textView.setText(String.valueOf(liczba_2-suma));
+
         Dexter.withActivity(this)
                 .withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener() {
@@ -211,8 +221,4 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         liczba_text.setText(String.valueOf(suma));
     }
 
-    public void m(){
-        int ilosc_m;
-
-    }
 }

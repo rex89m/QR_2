@@ -26,7 +26,7 @@ public class Settings extends AppCompatActivity {
     public void zapisz(View view) {
         SharedPreferences.Editor edit_5 = fille_5.edit();
         EditText editText = findViewById(R.id.ilosc_miejc);
-        edit_5.putString("settings", String.valueOf(editText));
+        edit_5.putString("settings", String.valueOf(editText.getText()));
         edit_5.apply();
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
