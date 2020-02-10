@@ -9,7 +9,6 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -30,12 +29,11 @@ import me.dm7.barcodescanner.zxing.ZXingScannerView;
 public class MainActivity extends AppCompatActivity implements ZXingScannerView.ResultHandler {
 
     private ZXingScannerView scannerView;
-    SharedPreferences fille;
-    SharedPreferences fille_2;
-    SharedPreferences fille_3;
-    SharedPreferences fille_4;
+    public SharedPreferences fille;
+    public SharedPreferences fille_2;
+    public SharedPreferences fille_3;
+    public SharedPreferences fille_4;
     int liczba = 0;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         fille = getSharedPreferences("dane", Activity.MODE_PRIVATE);
@@ -98,7 +96,6 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
             edit_2.putString(String.valueOf(fille.getAll().size()+1), date.getHours()+":"+date.getMinutes());
             edit.apply();
             edit_2.apply();
-            odczyt();
         }
         try {
             Thread.sleep(1000);
@@ -157,37 +154,6 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }
-    @SuppressLint("WrongViewCast")
-    public void odczyt(){
-        LinearLayout scrollView = findViewById(R.id.lista_2);
-
-        /*liczba=0;
-        for (String i : fille.getAll().keySet()){
-            TextView text = new TextView(this);
-            text.setTextSize(20);
-            text.setText("("+i+") "+fille_2.getString(i,"")+" "+fille.getString(i, ""));
-            if (fille_3.getString(i,"").equals("red")){
-                text.setTextColor(Color.RED);
-            }else{
-                liczba++;
-            }
-            if (fille_3.getString(i,"").equals("d")){
-                text.setTextColor(Color.RED);
-                text.setText("("+i+")"+fille_2.getString(i,"")+" "+fille.getString(i, "")+"(D)");
-
-            }
-
-            scrollView.addView(text);
-            */
-        TextView text = new TextView(this);
-        text.setText("dd");
-        scrollView.addView(text);
-        //TextView liczba_text = findViewById(R.id.ilosc_osob);
-        //int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
-        //liczba_text.setText(String.valueOf(suma));
-
-
-    }
     public void add_2(View view) {
         add(2);
     }
@@ -206,7 +172,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         String cos = i+liczba_int+"";
         edit.putString("liczba", cos);
         edit.apply();
-        TextView liczba_text = findViewById(R.id.liczba);
+        TextView liczba_text = findViewById(R.id.ilosc_osob);
         int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
         liczba_text.setText(String.valueOf(suma));
     }
@@ -215,4 +181,5 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         Intent intent = new Intent(this, Activity_lista.class);
         startActivity(intent);
     }
+
 }
