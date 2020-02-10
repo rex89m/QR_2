@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <me.dm7.barcodescanner.zxing.ZXingScannerView
+        android:id="@+id/screen"
+        android:layout_width="match_parent"
+        android:layout_height="300dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/but"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:layout_below="@id/screen"
+        >
+
+        <TextView
+            android:id="@+id/liczba"
+            android:layout_width="54dp"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="5"
+            android:gravity="center"
+            android:textSize="20sp">
+
+        </TextView>
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="add_1"
+            android:text="add 1" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="add_2"
+            android:text="add 2" />
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="add_3"
+            android:text="add 3" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="add_4"
+            android:text="add 4" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layaut"
+        android:background="@color/colorPrimaryDark"
+        android:orientation="vertical"
+        android:layout_below="@+id/but"
+        >
+
+        <Button
+            android:id="@+id/click_lista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="click_lista"
+            android:text="Lista" />
+        <Button
+            android:id="@+id/clear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:onClick="clear"
+            android:text="Clear" />
+
+    </LinearLayout>
+
+</RelativeLayout>
