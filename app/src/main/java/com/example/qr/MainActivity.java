@@ -50,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         scannerView = findViewById(R.id.screen);
+        podlicz();
         Dexter.withActivity(this)
                 .withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener() {
@@ -105,6 +106,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+        podlicz();
     }
 
     public void clear(View view) {
@@ -129,7 +131,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                         edit_2.apply();
                         edit_3.clear();
                         edit_3.apply();
-                        edit_4.clear();
+                        edit_4.putString("liczba", "0");
                         edit_4.apply();
                         TextView liczba_text = findViewById(R.id.ilosc_osob);
                         liczba_text.setText(String.valueOf(0));
@@ -147,6 +149,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         add(1);
+
                     }
                 })
                 .setNegativeButton(android.R.string.no, null)
@@ -171,9 +174,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         String cos = i+liczba_int+"";
         edit.putString("liczba", cos);
         edit.apply();
-        TextView liczba_text = findViewById(R.id.ilosc_osob);
-        int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
-        liczba_text.setText(String.valueOf(suma));
+        podlicz();
     }
 
     public void click_lista(View view) {
@@ -187,7 +188,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         startActivity(intent);
     }
     public void podlicz(){
-
+        liczba=0;
         for (String i : fille.getAll().keySet()) {
             TextView text = new TextView(this);
             text.setTextSize(20);
@@ -202,5 +203,13 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                 text.setText("(" + i + ")" + fille_2.getString(i, "") + " " + fille.getString(i, "") + "(D)");
             }
         }
+        TextView liczba_text = findViewById(R.id.ilosc_osob);
+        int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
+        liczba_text.setText(String.valueOf(suma));
+    }
+
+    public void m(){
+        int ilosc_m;
+
     }
 }
