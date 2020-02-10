@@ -35,26 +35,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="add_1"
-            android:text="add 1" />
+            android:text="+1" />
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="add_2"
-            android:text="add 2" />
+            android:text="+2" />
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="add_3"
-            android:text="add 3" />
+            android:text="+3" />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="add_4"
-            android:text="add 4" />
+            android:text="+4" />
 
     </LinearLayout>
     <LinearLayout
@@ -72,14 +72,14 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:onClick="click_lista"
-            android:text="Lista" />
+            android:text="dane" />
         <Button
             android:id="@+id/clear"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:onClick="clear"
-            android:text="Clear" />
+            android:text="usuń dane" />
 
     </LinearLayout>
 
