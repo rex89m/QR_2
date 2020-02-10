@@ -9,13 +9,12 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
 import com.google.zxing.Result;
 import com.karumi.dexter.Dexter;
 import com.karumi.dexter.PermissionToken;
@@ -120,7 +119,6 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                 .setMessage("")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        LinearLayout scrollView = findViewById(R.id.but);
                         SharedPreferences.Editor edit = fille.edit();
                         SharedPreferences.Editor edit_2 = fille_2.edit();
                         SharedPreferences.Editor edit_3 = fille_3.edit();
@@ -135,7 +133,6 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                         edit_4.apply();
                         TextView liczba_text = findViewById(R.id.ilosc_osob);
                         liczba_text.setText(String.valueOf(0));
-                        scrollView.removeAllViews();
                     }
                 })
                 .setNegativeButton(android.R.string.no, null)
@@ -188,5 +185,22 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     public void setting(View view) {
         Intent intent = new Intent(this, Settings.class);
         startActivity(intent);
+    }
+    public void podlicz(){
+
+        for (String i : fille.getAll().keySet()) {
+            TextView text = new TextView(this);
+            text.setTextSize(20);
+            text.setText("(" + i + ") " + fille_2.getString(i, "") + " " + fille.getString(i, ""));
+            if (fille_3.getString(i, "").equals("red")) {
+                text.setTextColor(Color.RED);
+            } else {
+                liczba++;
+            }
+            if (fille_3.getString(i, "").equals("d")) {
+                text.setTextColor(Color.RED);
+                text.setText("(" + i + ")" + fille_2.getString(i, "") + " " + fille.getString(i, "") + "(D)");
+            }
+        }
     }
 }
