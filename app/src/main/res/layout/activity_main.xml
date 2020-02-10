@@ -63,7 +63,7 @@
         android:id="@+id/layaut"
         android:background="@color/colorPrimaryDark"
         android:orientation="vertical"
-        android:layout_below="@+id/but"
+        android:layout_alignParentBottom="true"
         >
 
         <Button

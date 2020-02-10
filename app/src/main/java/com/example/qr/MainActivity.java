@@ -7,6 +7,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -207,6 +208,8 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     }
 
     public void click_lista(View view) {
+        Intent intent = new Intent(this, Activity_lista.class);
+        startActivity(intent);
 
     }
 }
