@@ -79,7 +79,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:onClick="clear"
-            android:text="usuń dane!!!!!" />
+            android:text="usuń dane????" />
 
     </LinearLayout>
 
