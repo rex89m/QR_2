@@ -61,13 +61,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
             edit_5.putString("settings", "0");
             edit_5.apply();
         }
-        TextView textView = findViewById(R.id.wolne_miejsca);
-        int liczba_2 = Integer.parseInt((fille_5.getString("settings", "")));
-        int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
-        Log.d("___", String.valueOf(liczba_2-suma));
-
-        textView.setText(String.valueOf(liczba_2-suma));
-
+        Empti_slot();
         Dexter.withActivity(this)
                 .withPermission(Manifest.permission.CAMERA)
                 .withListener(new PermissionListener() {
@@ -124,6 +118,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
             e.printStackTrace();
         }
         podlicz();
+        Empti_slot();
     }
 
     public void clear(View view) {
@@ -152,6 +147,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                         edit_4.apply();
                         TextView liczba_text = findViewById(R.id.ilosc_osob);
                         liczba_text.setText(String.valueOf(0));
+                        Empti_slot();
                     }
                 })
                 .setNegativeButton(android.R.string.no, null)
@@ -192,6 +188,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         edit.putString("liczba", cos);
         edit.apply();
         podlicz();
+        Empti_slot();
     }
 
     public void click_lista(View view) {
@@ -223,6 +220,21 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         TextView liczba_text = findViewById(R.id.ilosc_osob);
         int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
         liczba_text.setText(String.valueOf(suma));
+    }
+
+    public void Empti_slot(){
+        TextView textView = findViewById(R.id.wolne_miejsca);
+        int liczba_2;
+        try {
+            liczba_2 = Integer.parseInt((fille_5.getString("settings", "")));
+
+        } catch (NumberFormatException e) {
+            liczba_2=0;
+        }
+        int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
+        Log.d("___", String.valueOf(liczba_2-suma));
+
+        textView.setText(String.valueOf(liczba_2-suma));
     }
 
 }

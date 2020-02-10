@@ -1,6 +1,5 @@
 package com.example.qr;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -21,8 +20,9 @@ public class Settings extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        EditText text = findViewById(R.id.ilosc_miejc);
+        text.setText(fille_5.getString("settings",""));
     }
-
     public void zapisz(View view) {
         SharedPreferences.Editor edit_5 = fille_5.edit();
         EditText editText = findViewById(R.id.ilosc_miejc);
