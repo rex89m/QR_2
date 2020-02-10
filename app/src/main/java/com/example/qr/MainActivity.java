@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     public SharedPreferences fille_2;
     public SharedPreferences fille_3;
     public SharedPreferences fille_4;
+    public SharedPreferences fille_5;
+
     int liczba = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         fille_2 = getSharedPreferences("dane_2", Activity.MODE_PRIVATE);
         fille_3 = getSharedPreferences("dane_3", Activity.MODE_PRIVATE);
         fille_4 = getSharedPreferences("dane_4", Activity.MODE_PRIVATE);
+        fille_5 = getSharedPreferences("dane_5", Activity.MODE_PRIVATE);
 
         if (fille_4.getAll().isEmpty()) {
             SharedPreferences.Editor edit = fille_4.edit();

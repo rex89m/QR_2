@@ -83,8 +83,9 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/ilosc_miejc"
+                >
 
-
+            </EditText>
 
     </LinearLayout>
 
@@ -108,5 +109,15 @@
             />
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Zapisz"
+        android:onClick="zapisz"
+        >
+
+    </Button>
 
 </RelativeLayout>
