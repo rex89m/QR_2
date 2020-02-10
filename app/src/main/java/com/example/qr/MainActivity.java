@@ -11,7 +11,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
@@ -106,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                         edit_4.apply();
                         TextView liczba_text = findViewById(R.id.ilosc_osob);
                         liczba_text.setText(String.valueOf(0));
+                        podlicz();
                         Empti_slot();
                     }
                 })
@@ -224,7 +224,6 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
             liczba_2=0;
         }
         int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
-        Log.d("___", String.valueOf(liczba_2-suma));
 
         textView.setText(String.valueOf(liczba_2-suma));
     }
@@ -259,6 +258,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                     public void onPermissionGranted(PermissionGrantedResponse response) {
                         scannerView.setResultHandler(MainActivity.this);
                         scannerView.startCamera();
+                        scannerView.setAutoFocus(true);
                     }
 
                     @Override
