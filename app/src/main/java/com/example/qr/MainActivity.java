@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                         edit_3.apply();
                         edit_4.clear();
                         edit_4.apply();
-                        TextView liczba_text = findViewById(R.id.liczba);
+                        TextView liczba_text = findViewById(R.id.ilosc_osob);
                         liczba_text.setText(String.valueOf(0));
                         scrollView.removeAllViews();
                     }
