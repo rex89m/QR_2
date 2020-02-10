@@ -170,15 +170,48 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                 .show();
     }
     public void add_2(View view) {
-        add(2);
+        new AlertDialog.Builder(this)
+                .setTitle("Accept")
+                .setMessage("")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        add(2);
+
+                    }
+                })
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
     public void add_3(View view) {
-        add(3);
+        new AlertDialog.Builder(this)
+                .setTitle("Accept")
+                .setMessage("")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        add(3);
+
+                    }
+                })
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
     public void add_4(View view) {
-        add(4);
+        new AlertDialog.Builder(this)
+                .setTitle("Accept")
+                .setMessage("")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        add(4);
+
+                    }
+                })
+                .setNegativeButton(android.R.string.no, null)
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
     }
 
     public void add(int liczba_int){

@@ -104,39 +104,40 @@
         android:layout_height="wrap_content"
         android:id="@+id/but"
         android:padding="10dp"
+        android:gravity="center"
         android:orientation="horizontal"
         android:layout_below="@id/screen"
         >
 
         <Button
             android:id="@+id/button1"
-            android:layout_width="80dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:onClick="add_1"
             android:text="+1" />
         <Button
             android:id="@+id/button2"
-            android:layout_width="80dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:onClick="add_2"
             android:text="+2" />
         <Button
             android:id="@+id/button3"
-            android:layout_width="80dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:onClick="add_3"
             android:text="+3" />
 
         <Button
             android:id="@+id/button4"
-            android:layout_width="80dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:onClick="add_4"
             android:text="+4" />
 
         <Button
             android:id="@+id/button_"
-            android:layout_width="80dp"
+            android:layout_width="70dp"
             android:layout_height="wrap_content"
             android:onClick="add__"
             android:text="+?" />
