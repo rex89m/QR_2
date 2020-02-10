@@ -72,6 +72,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
             Thread.sleep(1000);
             scannerView.setResultHandler(MainActivity.this);
             scannerView.startCamera();
+            scannerView.setAutoFocus(true);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
