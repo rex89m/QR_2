@@ -72,7 +72,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:onClick="click_lista"
-            android:text="dane" />
+            android:text="dane oknt" />
         <Button
             android:id="@+id/clear"
             android:layout_width="match_parent"
