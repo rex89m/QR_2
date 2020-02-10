@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         fille_3 = getSharedPreferences("dane_3", Activity.MODE_PRIVATE);
         fille_4 = getSharedPreferences("dane_4", Activity.MODE_PRIVATE);
         fille_5 = getSharedPreferences("dane_5", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor edit_5 = fille_5.edit();
 
         if (fille_4.getAll().isEmpty()) {
             SharedPreferences.Editor edit = fille_4.edit();
@@ -55,11 +56,14 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         setContentView(R.layout.activity_main);
         scannerView = findViewById(R.id.screen);
         podlicz();
+
+        if (fille_5.getAll().isEmpty()){
+            edit_5.putString("settings", "0");
+            edit_5.apply();
+        }
         TextView textView = findViewById(R.id.wolne_miejsca);
         int liczba_2 = Integer.parseInt((fille_5.getString("settings", "")));
-
         int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
-
         Log.d("___", String.valueOf(liczba_2-suma));
 
         textView.setText(String.valueOf(liczba_2-suma));
