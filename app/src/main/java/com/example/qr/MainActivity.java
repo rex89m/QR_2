@@ -27,7 +27,6 @@ import com.karumi.dexter.listener.PermissionGrantedResponse;
 import com.karumi.dexter.listener.PermissionRequest;
 import com.karumi.dexter.listener.single.PermissionListener;
 
-
 import java.util.Date;
 
 import me.dm7.barcodescanner.zxing.ZXingScannerView;
