@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -35,7 +34,7 @@ public class Activity_lista extends AppCompatActivity {
         @SuppressLint("WrongViewCast")
         LinearLayout scrollView = findViewById(R.id.lista_2);
         scrollView.removeAllViews();
-        /*
+
         for (String i : fille.getAll().keySet()) {
             TextView text = new TextView(this);
             text.setTextSize(20);
@@ -52,15 +51,10 @@ public class Activity_lista extends AppCompatActivity {
 
             scrollView.addView(text);
 
-         */
+
             //TextView liczba_text = findViewById(R.id.ilosc_osob);
             //int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
             //liczba_text.setText(String.valueOf(suma));
-        for (int i=0;i<50;i++){
-            TextView test = new TextView(this);
-            test.setText(i+"");
-            test.setTextSize(20);
-            scrollView.addView(test);
         }
     }
 }
