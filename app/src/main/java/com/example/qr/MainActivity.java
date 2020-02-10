@@ -13,7 +13,6 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.google.zxing.Result;
@@ -40,48 +39,8 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     int liczba = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        fille = getSharedPreferences("dane", Activity.MODE_PRIVATE);
-        fille_2 = getSharedPreferences("dane_2", Activity.MODE_PRIVATE);
-        fille_3 = getSharedPreferences("dane_3", Activity.MODE_PRIVATE);
-        fille_4 = getSharedPreferences("dane_4", Activity.MODE_PRIVATE);
-        fille_5 = getSharedPreferences("dane_5", Activity.MODE_PRIVATE);
-        SharedPreferences.Editor edit_5 = fille_5.edit();
-
-        if (fille_4.getAll().isEmpty()) {
-            SharedPreferences.Editor edit = fille_4.edit();
-            edit.putString("liczba", String.valueOf(0));
-            edit.apply();
-        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        scannerView = findViewById(R.id.screen);
-        podlicz();
-
-        if (fille_5.getAll().isEmpty()){
-            edit_5.putString("settings", "0");
-            edit_5.apply();
-        }
-        Empti_slot();
-        Dexter.withActivity(this)
-                .withPermission(Manifest.permission.CAMERA)
-                .withListener(new PermissionListener() {
-                    @Override
-                    public void onPermissionGranted(PermissionGrantedResponse response) {
-                        scannerView.setResultHandler(MainActivity.this);
-                        scannerView.startCamera();
-                    }
-
-                    @Override
-                    public void onPermissionDenied(PermissionDeniedResponse response) {
-
-                    }
-
-                    @Override
-                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
-
-                    }
-                })
-                .check();
     }
 
     @Override
@@ -237,4 +196,50 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
         textView.setText(String.valueOf(liczba_2-suma));
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        fille = getSharedPreferences("dane", Activity.MODE_PRIVATE);
+        fille_2 = getSharedPreferences("dane_2", Activity.MODE_PRIVATE);
+        fille_3 = getSharedPreferences("dane_3", Activity.MODE_PRIVATE);
+        fille_4 = getSharedPreferences("dane_4", Activity.MODE_PRIVATE);
+        fille_5 = getSharedPreferences("dane_5", Activity.MODE_PRIVATE);
+        SharedPreferences.Editor edit_5 = fille_5.edit();
+
+        if (fille_4.getAll().isEmpty()) {
+            SharedPreferences.Editor edit = fille_4.edit();
+            edit.putString("liczba", String.valueOf(0));
+            edit.apply();
+        }
+        scannerView = findViewById(R.id.screen);
+        podlicz();
+
+        if (fille_5.getAll().isEmpty()){
+            edit_5.putString("settings", "0");
+            edit_5.apply();
+        }
+        Empti_slot();
+        Dexter.withActivity(this)
+                .withPermission(Manifest.permission.CAMERA)
+                .withListener(new PermissionListener() {
+                    @Override
+                    public void onPermissionGranted(PermissionGrantedResponse response) {
+                        scannerView.setResultHandler(MainActivity.this);
+                        scannerView.startCamera();
+                    }
+
+                    @Override
+                    public void onPermissionDenied(PermissionDeniedResponse response) {
+
+                    }
+
+                    @Override
+                    public void onPermissionRationaleShouldBeShown(PermissionRequest permission, PermissionToken token) {
+
+                    }
+                })
+                .check();
+
+
+    }
 }
