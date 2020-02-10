@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
 
     public void clear(){
         new AlertDialog.Builder(this)
-                .setTitle("Clear?")
+                .setTitle("Czy chcesz skasować wszystkie dane?")
                 .setMessage("")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
