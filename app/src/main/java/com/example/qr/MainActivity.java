@@ -186,5 +186,7 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
 
 
     public void setting(View view) {
+        Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
     }
 }
