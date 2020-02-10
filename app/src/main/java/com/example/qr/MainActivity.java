@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                     edit_3.apply();
                 }
             }
-
             edit.putString(String.valueOf(fille.getAll().size()+1), rawResult.getText());
             edit_2.putString(String.valueOf(fille.getAll().size()+1), date.getHours()+":"+date.getMinutes());
             edit.apply();
@@ -158,10 +157,11 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
     }
+    @SuppressLint("WrongViewCast")
     public void odczyt(){
-        LinearLayout scrollView = findViewById(R.id.but);
-        scrollView.removeAllViews();
-        liczba=0;
+        LinearLayout scrollView = findViewById(R.id.lista_2);
+
+        /*liczba=0;
         for (String i : fille.getAll().keySet()){
             TextView text = new TextView(this);
             text.setTextSize(20);
@@ -176,14 +176,18 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
                 text.setText("("+i+")"+fille_2.getString(i,"")+" "+fille.getString(i, "")+"(D)");
 
             }
+
             scrollView.addView(text);
-        }
-        TextView liczba_text = findViewById(R.id.liczba);
-        int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
-        liczba_text.setText(String.valueOf(suma));
+            */
+        TextView text = new TextView(this);
+        text.setText("dd");
+        scrollView.addView(text);
+        //TextView liczba_text = findViewById(R.id.ilosc_osob);
+        //int suma = liczba+Integer.parseInt(fille_4.getString("liczba",""));
+        //liczba_text.setText(String.valueOf(suma));
+
 
     }
-
     public void add_2(View view) {
         add(2);
     }
@@ -210,6 +214,5 @@ public class MainActivity extends AppCompatActivity implements ZXingScannerView.
     public void click_lista(View view) {
         Intent intent = new Intent(this, Activity_lista.class);
         startActivity(intent);
-
     }
 }
