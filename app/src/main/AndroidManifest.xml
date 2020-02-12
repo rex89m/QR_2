@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".Add_Activity"
+            android:label="@string/title_activity_add_"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.qr.MainActivity" />
+        </activity>
+        <activity
             android:name=".Settings"
             android:label="@string/title_activity_settings"
             android:parentActivityName=".MainActivity"
@@ -35,9 +44,9 @@
             </intent-filter>
         </activity>
     </application>
-    <uses-feature android:name="android.hardware.camera.autofocus" />
-
     <uses-feature android:name="android.hardware.camera" />
+
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <uses-permission android:name="android.permission.CAMERA" />
 
